@@ -1,8 +1,9 @@
 App(
-  appid="dodge_game",
-  name="Dodge",
-  apptype=FlipperAppType.EXTERNAL,
-  entry_point="dodge_game_app",
-  requires=["gui"],
-  stack_size=2 * 1024,
-  fap_category="Games",
+    appid="dodge_game",
+    name="Dodge",
+    apptype=FlipperAppType.EXTERNAL,
+    entry_point="dodge_game_app",
+    requires=["gui"],
+    stack_size=2 * 1024,
+    fap_category="Games",
+)
