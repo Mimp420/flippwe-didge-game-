@@ -1,0 +1,25 @@
+name: Build Flipper Game
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build with uFBT
+        uses: flipperdevices/flipperzero-ufbt-action@v0.1
+        id: build-app
+        with:
+          sdk-channel: release
+
+      - name: Upload FAP
+        uses: actions/upload-artifact@v4
+        with:
+          name: dodge-game
+          path: ${{ steps.build-app.outputs.fap-artifacts }}
