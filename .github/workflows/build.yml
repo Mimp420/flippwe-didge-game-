@@ -13,11 +13,13 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Build with uFBT
-        uses: flipperdevices/flipperzero-ufbt-action@v0.1
-        id: build-app
-        with:
-          sdk-channel: release
-
+  uses: flipperdevices/flipperzero-ufbt-action@v0.1
+  id: build-app
+  with:
+    sdk-channel: release
+    app-dir: .
+    ufbt-args: "" 
+    
       - name: Upload FAP
         uses: actions/upload-artifact@v4
         with:
